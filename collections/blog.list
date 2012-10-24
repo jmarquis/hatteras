@@ -1,4 +1,3 @@
-
 <!-- CATEGORY FILTER RESULTS ex: http://base-template.squarespace.com/blog/?category=category1 -->
 
 {.section categoryFilter}
@@ -13,8 +12,8 @@
 
 <!-- AUTHOR FILTER RESULTS ex: http://www.base-template.com/blog?author=4f046df4d09ae2cf23d1aaa2 -->
 
-{.section authorFilter}
-  <p>Filtering by Author: {@}</p>
+{.if authorFilter}
+  <p>Filtering by Author: {author.displayName}</p>
 {.end}
 
 <!--ITEM LOOP-->
