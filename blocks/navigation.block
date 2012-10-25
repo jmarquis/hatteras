@@ -1,5 +1,5 @@
 
-<nav id="main-navigation">
+<nav id="main-navigation" data-content-field="navigation-mainNav">
   <ul>
     {.repeated section items}
 
@@ -9,9 +9,9 @@
 
             <!--FOLDER-->
 
-            <div class="folder-parent">
-              <a>{collection.navigationTitle}</a>
-              <ul class="folder-child">
+              <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+
+              <ul>
 
                 {.repeated section items}
 
@@ -37,8 +37,7 @@
                 {.end}
 
               </ul>
-            </div>
-
+              
           {.or}
 
             <!--COLLECTION-->
