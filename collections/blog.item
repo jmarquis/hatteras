@@ -26,13 +26,13 @@
     <!--CATEGORIES-->
 
     {.repeated section categories}
-      <a class="category" href="?category={@|url-encode}">{@}</a>{.alternates with},
+      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
     {.end}
 
     <!--TAGS-->
 
     {.repeated section tags}
-      <a class="tag" href="?tag={@|url-encode}">{@}</a>{.alternates with},
+      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
     {.end}
 
     <!--SHARE AND LIKE-->
@@ -43,7 +43,7 @@
     <!--AUTHOR AND DATE-->
     
     <p class="meta">
-      Published on <a href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="?author={author.id}">{author.displayName}</a>.
+      Published on <a href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a>.
       {.section sourceUrl}
         <a href="{@}" class="source" target="_blank">Source</a>.
       {.end}
