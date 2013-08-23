@@ -11,8 +11,6 @@
     <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
 
     {squarespace-headers}
-
-    <squarespace:script src="site.js" combo="true" />
   
   </head>
 
