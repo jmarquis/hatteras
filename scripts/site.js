@@ -22,9 +22,4 @@ YUI().use('node', function(Y) {
 	See the developer docs for JavaScript examples.
 	http://developers.squarespace.com/custom-javascript/
 
-	To load up a script, use this syntax in site.region.
-	<squarespace:script src="site.js" combo="true" />
-
-	Helpful tip: For debugging set combo to false.
-
 */

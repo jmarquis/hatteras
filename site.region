@@ -11,6 +11,15 @@
     <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
 
     {squarespace-headers}
+
+    <!--
+
+      To load up a script, use this syntax in site.region.
+      <squarespace:script src="site.js" combo="true" />
+
+      Helpful tip: For debugging set combo to false.
+
+    -->
   
   </head>
 
