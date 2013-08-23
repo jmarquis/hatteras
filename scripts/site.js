@@ -1,10 +1,30 @@
+/*
 
-Y.use('node', function(Y) {
+	Feel free to load up JQuery in your site.region.
 
-  Y.on('domready', function() {
-    // Init ImageLoader  
-    new Y.Squarespace.Loader({
-      img:Y.all('img[data-image]')
-    });       
-  });
+	We use YUI3 and you can, too. For JQuery developers,
+	a helpful guide to learning YUI3 can be found at:
+
+	http://www.jsrosettastone.com/
+
+*/
+
+YUI().use('node', function(Y) {
+	Y.on('domready', function() {
+
+		// Do stuff here.
+
+	});
 });
+
+/*
+
+	See the developer docs for JavaScript examples.
+	http://developers.squarespace.com/custom-javascript/
+
+	To load up a script, use this syntax in site.region.
+	<squarespace:script src="site.js" combo="true" />
+
+	Helpful tip: For debugging set combo to false.
+
+*/
