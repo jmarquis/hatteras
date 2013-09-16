@@ -9,7 +9,7 @@
 
 */
 
-YUI().use('node', function(Y) {
+Y.use('node', function(Y) {
 	Y.on('domready', function() {
 
 		// Do stuff here.
