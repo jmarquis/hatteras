@@ -1,74 +1,56 @@
 <!doctype html>
-
 <html>
-
   <head>
     
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="initial-scale=1">
 
-    <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
-
+    <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
 
-    <!--
-
-      To load up a script, use this syntax in site.region.
-      <squarespace:script src="site.js" combo="true" />
-
-      Helpful tip: For debugging set combo to false.
-
-    -->
-  
   </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    
-    <!--HEADER-->
 
-    <header id="header">
+    <header id="header" class="header">
 
-      <!--SITE TITLE OR LOGO-->
-
+      <!--Site title or logo.-->
       {.section website}
 
-        <h1 data-content-field="site-title">
+        <h1 class="site-title" data-content-field="site-title">
           <a href="/">
             {.section logoImageUrl}
-             <img src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+             <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
             {.or}
               {siteTitle}
             {.end}
           </a>
         </h1>
         
-        <!--SITE TAGLINE-->
-
+        <!--Site tagline.-->
         {.section siteTagLine}<p>{@}</p>{.end}
 
       {.end}
 
-      <!--MAIN NAVIGATION-->
-
+      <!--Main navigation.-->
       <squarespace:navigation navigationId="mainNav" template="navigation" />
 
     </header>
 
-    <!--CONTENT INJECTION POINT-->
-
-    <section id="content">    
+    <!--Content injection point.-->
+    <section id="content" class="content">
      {squarespace.main-content}
     </section>
 
-    <!--FOOTER WITH OPEN BLOCK FIELD-->
-
-    <footer id="footer">
+    <!--Footer with open block field.-->
+    <footer id="footer" class="footer">
       <squarespace:block-field id="footerBlocks" columns="12" />
     </footer>
 
-    <!--INJECTION POINT FOR TRACKING SCRIPTS AND USER CONTENT FROM THE CODE INJECTION TAB-->
+    <!--Set combo to false when debugging.-->
+    <squarespace:script src="site.js" combo="true" />
 
+    <!--Injection point for tracking scripts and user content from the code injection tab.-->
     {squarespace-footers}
     
   </body>
