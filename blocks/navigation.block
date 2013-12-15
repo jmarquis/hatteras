@@ -1,5 +1,5 @@
 
-<nav id="main-navigation" data-content-field="navigation-mainNav">
+<nav id="main-navigation" class="main-navigation" data-content-field="navigation-mainNav">
   <ul>
     {.repeated section items}
 
