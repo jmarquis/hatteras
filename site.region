@@ -1,19 +1,15 @@
 <!doctype html>
 <html>
   <head>
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1">
 
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
-
   </head>
-
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
     <header id="header" class="header">
-
       <!--Site title or logo.-->
       {.section website}
 
@@ -34,7 +30,6 @@
 
       <!--Main navigation.-->
       <squarespace:navigation navigationId="mainNav" template="navigation" />
-
     </header>
 
     <!--Content injection point.-->
@@ -54,5 +49,4 @@
     {squarespace-footers}
     
   </body>
-
 </html> 
