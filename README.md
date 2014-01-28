@@ -15,7 +15,7 @@ By default, all Squarespace sites include the following 3rd party libraries:
 - [modernizr.js](http://github.com/Modernizr/Modernizr "modernizr") – feature detect HTML5 and CSS3 features
 
 
-[normalize.css (v2.1.3)](https://github.com/necolas/normalize.css "normalize.css") is also included in this template as `/styles/reset.css`.
+[normalize.css (v3.0.0-rc.1)](https://github.com/necolas/normalize.css "normalize.css") is also included in this template as `/styles/reset.css`.
 
 
 Developer Center
