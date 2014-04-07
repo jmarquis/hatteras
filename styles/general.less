@@ -1,0 +1,39 @@
+@s-max: 767px;
+@m-min: 768px;
+@m-max: 1023px;
+@l-min: 1024px;
+@l-max: 1199px;
+@xl-min: 1200px;
+
+*, ::before, ::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 5%;
+
+	.yui3-widget & {
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+
+	@media (max-width: @l-max) and (min-width: @m-min) {
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+
+	@media (max-width: @s-max) {
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+}
+
