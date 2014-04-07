@@ -1,5 +1,5 @@
 
-		<squarespace:script src="site.js" combo="true">
+		<squarespace:script src="main.js" combo="true">
 
 		{squarespace-footers}
 
