@@ -3,17 +3,14 @@ Base Template
 
 This is a fork of the [Squarespace Base Template](https://github.com/Squarespace/base-template) specifically tailored to give a jump start to experienced Squarespace template developers, instead of sample content and extra readmes.
 
-This repo also contains config files for NPM, Bower, Grunt and [grunt-bower-task](https://github.com/yatskevich/grunt-bower-task), which is used to dynamically fetch the latest version of [a minimal LESS mixin library](https://github.com/knapsackco/mixins).
-
 
 Setup
 -----
 
 1. Clone a fork of this repo to your computer.
-2. In the root directory of your new template, run `npm install && grunt` to fetch the mixins library.
-3. Set up a new Squarespace Developer Platform site as described on the [Developer Platform Setup page](http://developers.squarespace.com/initial-setup/).
-4. Fill in your username, password and remote folder for your Squarespace site in `sftp-config.json`.
-5. That's it! Use SFTP to push/pull/sync files with Squarespace as you choose.
+2. Set up a new Squarespace Developer Platform site as described on the [Developer Platform Setup page](http://developers.squarespace.com/initial-setup/).
+3. Fill in your username, password and remote folder for your Squarespace site in `sftp-config.json`.
+4. That's it! Use SFTP to push/pull/sync files with Squarespace as you choose.
 
 
 Notable Differences
@@ -23,7 +20,7 @@ Notable Differences
 
 - A mostly-blank `default.preset` is added to prevent a weird bug where Style Mode doesn't work.
 
-- NPM, Bower, Grunt and grunt-bower-task are preconfigured to download and place the latest version of Knapsack's minimalist LESS mixin library. If you don't want to use this, you can delete `package.json`, `bower.json` and `Gruntfile.js`.
+- The latest version of Knapsack's minimalist LESS mixin library resides in `styles/mixins.lib.less`.
 
 - A config file for Sublime SFTP is included. If you don't use Sublime SFTP (and you really should), you can delete `sftp-config.json`.
 
