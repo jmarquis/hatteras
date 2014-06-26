@@ -48,7 +48,7 @@ Notable Differences
 
 - Tabs are used for indentation instead of spaces, since any decent text editor can display a tab whichever way a developer wishes (2 or 4 character-width indent).
 
-- JSON files are cleaned up to use standard, consistent formatting, except for `bower.json` and `package.json` which are usually modified directly by Bower or NPM.
+- JSON files are cleaned up to use standard, consistent formatting.
 
 - Whitespace in general is cleaned up and made consistent.
 
