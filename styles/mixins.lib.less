@@ -1,0 +1,124 @@
+// Knapsack LESS Mixins 1.0.3
+// github.com/knapsackco/mixins
+
+.clearfix () {
+	*zoom: 1;
+
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+.box-sizing (@sizing) {
+	-webkit-box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+
+.transform (@transform) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	transform: @transform;
+	-webkit-backface-visibility: hidden;
+}
+
+// deprecated
+.transform-transition (@properties) {
+	-webkit-transition: -webkit-transform @properties;
+	-moz-transition: -moz-transform @properties;
+	-ms-transition: -ms-transform @properties;
+	transition: transform @properties;
+	-webkit-backface-visibility: hidden;
+}
+
+.transition-transform (@properties) {
+	-webkit-transition: -webkit-transform @properties;
+	-moz-transition: -moz-transform @properties;
+	-ms-transition: -ms-transform @properties;
+	transition: transform @properties;
+	-webkit-backface-visibility: hidden;
+}
+
+.transition-filter (@properties) {
+	-webkit-transition: -webkit-filter @properties;
+	-moz-transition: filter @properties;
+	transition: filter @properties;
+}
+
+.user-select (@select) {
+	-webkit-user-select: @select;
+	-moz-user-select: @select;
+	-ms-user-select: @select;
+	user-select: @select;
+}
+
+#gradient {
+
+	.vertical (@startColor, @endColor) {
+		background-color: transparent;
+		background-image: -moz-linear-gradient(top, @startColor 0%, @endColor 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));
+		background-image: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+		background-image: -ms-linear-gradient(top, @startColor 0%, @endColor 100%);
+		background-image: linear-gradient(to bottom, @startColor 0%, @endColor 100%);
+	}
+
+	.vertical-three-colors (@startColor, @color2, @stop2, @endColor) {
+		background-color: transparent;
+		background-image: -moz-linear-gradient(top, @startColor 0%, @color2 @stop2, @endColor 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(@stop2, @color2), color-stop(100%, @endColor));
+		background-image: -webkit-linear-gradient(top, @startColor 0%, @color2 @stop2, @endColor 100%);
+		background-image: -ms-linear-gradient(top, @startColor 0%, @color2 @stop2, @endColor 100%);
+		background-image: linear-gradient(to bottom, @startColor 0%, @color2 @stop2, @endColor 100%);
+	}
+
+	.vertical-four-colors (@startColor, @color2, @stop2, @color3, @stop3, @endColor) {
+		background-color: transparent;
+		background-image: -moz-linear-gradient(top, @startColor 0%, @color2 @stop2, @color3 @stop3, @endColor 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(@stop2, @color2), color-stop(@stop3, @color3), color-stop(100%, @endColor));
+		background-image: -webkit-linear-gradient(top, @startColor 0%, @color2 @stop2, @color3 @stop3, @endColor 100%);
+		background-image: -ms-linear-gradient(top, @startColor 0%, @color2 @stop2, @color3 @stop3, @endColor 100%);
+		background-image: linear-gradient(to bottom, @startColor 0%, @color2 @stop2, @color3 @stop3, @endColor 100%);
+	}
+
+	.horizontal (@startColor, @endColor) {
+		background-color: transparent;
+		background-image: -moz-linear-gradient(left, @startColor 0%, @endColor 100%);
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor));
+		background-image: -webkit-linear-gradient(left, @startColor 0%, #2989d8 50%, #207cca 51%, @endColor 100%);
+		background-image: -ms-linear-gradient(left, @startColor 0%, @endColor 100%);
+		background-image: linear-gradient(to right, @startColor 0%, @endColor 100%);
+	}
+}
+
+.valign-middle () {
+	font-size: 0;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+.placeholder-color (@color) {
+	::-webkit-input-placeholder,
+	:-moz-placeholder,
+	:-ms-input-placeholder {
+		color: @color;
+	}
+}
