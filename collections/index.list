@@ -1,0 +1,19 @@
+<nav>
+	<squarespace:navigation navigationId="main-nav" template="navigation">
+</nav>
+
+<header>
+
+	{.section website}
+		<h1 id="title">{siteTagLine}</h1>
+	{.end}
+
+</header>
+
+<main>
+	{.repeated section collection.collections}
+
+		TEST: {@index}<br>
+
+	{.end}
+</main>
