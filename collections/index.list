@@ -1,12 +1,20 @@
-<nav>
+<nav id="nav">
 	<squarespace:navigation navigationId="main-nav" template="navigation">
 </nav>
 
-<header>
+<header id="header">
+
+	{.section collection.mainImage}
+		<figure class="content-fill">
+			<img {@|image-meta}>
+		</figure>
+	{.end}
 
 	{.section website}
 		<h1 id="title">{siteTagLine}</h1>
 	{.end}
+
+	<a class="arrow" href="#main"></a>
 
 </header>
 
