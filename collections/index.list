@@ -21,7 +21,24 @@
 <main>
 	{.repeated section collection.collections}
 
-		TEST: {@index}<br>
+		{.equal? typeName "blog"}
+			<section class="blog">
+				<h4>The Latest</h4>
+				{.repeated section items}
+					{.equal? @index 1}
+						<h1>{title}</h1>
+						<h2>{excerpt}</h2>
+						<a href="{fullUrl}">View Post</a>
+					{.end}
+				{.end}
+			</section>
+		{.end}
+
+		{.equal? typeName "page"}
+			<section>
+				{mainContent}
+			</section>
+		{.end}
 
 	{.end}
 </main>

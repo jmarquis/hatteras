@@ -14,8 +14,12 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 4% 5% 0 0;
+	margin: 40px 50px 0 0;
 	z-index: 10;
+
+	@media (max-width: @s-max) {
+		margin-right: 30px;
+	}
 
 	> ul {
 		list-style: none;
@@ -34,6 +38,21 @@
 				padding: 10px 55px 10px 10px;
 				margin: -10px 0 0 0;
 				display: inline-block;
+
+				.no-touch &:hover {
+
+					&::before {
+						.transform(translateY(-2px));
+					}
+
+					&::after {
+						.transform(translateY(2px));
+					}
+				}
+
+				@media (max-width: @s-max) {
+					font-size: 0;
+				}
 			}
 
 			&:last-child {
@@ -49,6 +68,8 @@
 					position: absolute;
 					top: 7px;
 					right: 10px;
+					.transition-transform(.1s ease);
+					pointer-events: none;
 				}
 
 				> a::before {
