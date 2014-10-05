@@ -1,3 +1,107 @@
+// tweak: { "type": "font", "title": "H1 Font", "target": "h1" }
+.h1-font {
+	font-family: "pt-mono", Courier, monospace;
+	font-size: 32px;
+	font-weight: 400;
+	letter-spacing: .09em;
+	text-transform: none;
+	line-height: 1.25em;
+}
+
+h1 {
+	.h1-font;
+}
+
+
+// tweak: { "type": "font", "title": "H2 Font", "target": "h2" }
+.h2-font {
+	font-family: "pt-mono", Courier, monospace;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: .08em;
+	text-transform: none;
+	line-height: 1.33em;
+}
+
+h2 {
+	.h2-font;
+}
+
+
+// tweak: { "type": "font", "title": "H3 Font", "target": "h3" }
+.h3-font {
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Futura", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: .21em;
+	text-transform: uppercase;
+	line-height: 1.25em;
+}
+
+h3 {
+	.h3-font;
+}
+
+
+// tweak: { "type": "font", "title": "H4 Font", "target": "h4" }
+.h4-font {
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Futura", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: .21em;
+	text-transform: uppercase;
+	line-height: 1.25em;
+}
+
+h4 {
+	.h4-font;
+}
+
+
+h1, h2, h3, h4 {
+	margin: 1em 0 .5em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+// tweak: { "type": "font", "title": "Paragraph Font", "target": "p" }
+.paragraph-font {
+	font-family: "pt-mono", Courier, monospace;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: .08em;
+	text-transform: none;
+	line-height: 1.5em;
+}
+
+// tweak: { "type": "color", "title": "Paragraph Color", "target": "p" }
+@paragraph-color: #111;
+
+
+body {
+	color: @paragraph-color;
+}
+
+p {
+	.paragraph-font;
+}
+
+
+// tweak: { "type": "color", "title": "Link Color", "target": ".sqs-layout a" }
+@link-color: #2bb;
+
 a {
+	color: @link-color;
 	text-decoration: none;
+
+	.no-touch &:hover {
+		color: desaturate(@link-color, 100%);
+	}
 }

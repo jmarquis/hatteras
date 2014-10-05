@@ -1,14 +1,68 @@
 .collection-type-index > main {
 
-	> section.blog {
+	> section {
+		padding: 4% 5%;
 
-		&:first-child {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 100vh;
-			z-index: 20;
+		&.blog {
+			text-align: center;
+			padding: 0;
+
+			> .content {
+				width: 80%;
+
+				> h4 {
+					color: #fff;
+				}
+
+				> h1 {
+					color: #fff;
+
+					@media (max-width: @s-max) {
+						font-size: (@h1-font-font-size / 1.5);
+					}
+				}
+
+				> h2 {
+					color: #fff;
+
+					@media (max-width: @s-max) {
+						display: none;
+					}
+				}
+
+				> a {
+					margin-top: 20px;
+				}
+			}
+
+			&:first-child {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100vh;
+				z-index: 20;
+				font-size: 0;
+				visibility: hidden;
+
+				&::before {
+					content: "";
+					display: inline-block;
+					height: 100%;
+					vertical-align: middle;
+				}
+
+				> .content {
+					display: inline-block;
+					vertical-align: middle;
+					padding-top: 0;
+					padding-bottom: 0;
+
+					> * {
+						visibility: visible;
+					}
+				}
+			}
 		}
 	}
 }

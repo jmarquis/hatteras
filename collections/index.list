@@ -23,20 +23,24 @@
 
 		{.equal? typeName "blog"}
 			<section class="blog">
-				<h4>The Latest</h4>
-				{.repeated section items}
-					{.equal? @index 1}
-						<h1>{title}</h1>
-						<h2>{excerpt}</h2>
-						<a href="{fullUrl}">View Post</a>
+				<div class="content">
+					<h4>The Latest</h4>
+					{.repeated section items}
+						{.equal? @index 1}
+							<h1>{title}</h1>
+							<h2>{excerpt}</h2>
+							<a href="{fullUrl}" class="button">View Post</a>
+						{.end}
 					{.end}
-				{.end}
+				</div>
 			</section>
 		{.end}
 
 		{.equal? typeName "page"}
 			<section>
-				{mainContent}
+				<div class="content">
+					{mainContent}
+				</div>
 			</section>
 		{.end}
 

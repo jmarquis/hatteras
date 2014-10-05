@@ -1,0 +1,38 @@
+.sqs-layout {
+
+	h1, h2, h3, h4, h5, h6, p {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// tweak: { "type": "font", "title": "Button Font", "target": ".sqs-button-block, a.button" }
+.button-font {
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Futura", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: .21em;
+	text-transform: uppercase;
+}
+
+a.button {
+	.button-font;
+	display: inline-block;
+	padding: 14px 30px;
+	border-radius: 100px;
+	border: 3px solid #fff;
+	color: #fff;
+	.transition(background-color .1s ease, color .1s ease;);
+
+	.no-touch &:hover {
+		background-color: #fff;
+		color: #111;
+	}
+}
