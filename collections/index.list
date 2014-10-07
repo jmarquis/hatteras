@@ -27,8 +27,8 @@
 					<h4>The Latest</h4>
 					{.repeated section items}
 						{.equal? @index 1}
-							<h1>{title}</h1>
-							<h2>{excerpt}</h2>
+							<h2>{title}</h2>
+							{excerpt}
 							<a href="{fullUrl}" class="button">View Post</a>
 						{.end}
 					{.end}

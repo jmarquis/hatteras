@@ -1,11 +1,13 @@
 .collection-type-index > main {
 
 	> section {
-		padding: 4% 5%;
+		padding: 0 5%;
+		margin: 4% 0;
 
 		&.blog {
 			text-align: center;
 			padding: 0;
+			margin: 0;
 
 			> .content {
 				width: 80%;
@@ -14,15 +16,16 @@
 					color: #fff;
 				}
 
-				> h1 {
+				> h2 {
 					color: #fff;
+					letter-spacing: .09em;
 
 					@media (max-width: @s-max) {
-						font-size: (@h1-font-font-size / 1.5);
+						font-size: (@h2-font-font-size / 1.5);
 					}
 				}
 
-				> h2 {
+				> p {
 					color: #fff;
 
 					@media (max-width: @s-max) {
