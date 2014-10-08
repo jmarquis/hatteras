@@ -22,17 +22,74 @@
 	text-transform: uppercase;
 }
 
-a.button {
+a.button,
+body .sqs-block-form .form-wrapper input[type=submit],
+body .sqs-block-form .form-wrapper input[type=submit] {
 	.button-font;
 	display: inline-block;
 	padding: 14px 30px;
 	border-radius: 100px;
-	border: 3px solid #fff;
-	color: #fff;
 	.transition(background-color .1s ease, color .1s ease;);
+}
 
-	.no-touch &:hover {
+.button-color (@color1: #111, @color2: #fff) {
+
+	a.button,
+	//.sqs-block-button
+	body .sqs-block-form .form-wrapper input[type=submit],
+	body .sqs-block-form .form-wrapper input[type=submit] {
+		background-color: @color1;
+		color: @color2;
+		border: 3px solid @color1;
+
+		.no-touch &:hover {
+			background-color: transparent;
+			color: @color1;
+			opacity: 1 !important;
+		}
+	}
+}
+
+.button-color();
+
+
+// tweak: { "type": "font", "title": "Form Field Title", "target": ".sqs-block-form" }
+.field-title-font {
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Futura", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: 0em;
+	text-transform: uppercase;
+}
+
+// tweak: { "type": "font", "title": "Form Field Text", "target": ".sqs-block-form" }
+.field-font {
+	font-family: "pt-mono", Courier, monospace;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0em;
+	text-transform: none;
+	line-height: 1.5em;
+}
+
+html .sqs-block-form .form-wrapper {
+
+	label.title {
+		.field-title-font;
+		margin-bottom: 2px;
+
+		> .required {
+			display: none;
+		}
+	}
+
+	.field-list .field .field-element {
 		background-color: #fff;
-		color: #111;
+		border: 3px solid #111;
+		border-radius: 0;
+		box-shadow: none;
+		margin: 0 !important;
+		.field-font;
+		padding: 6px 12px 10px;
 	}
 }
