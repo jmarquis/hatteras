@@ -10,10 +10,25 @@
 // tweak: { "type": "color", "title": "Site Title Color", "target": "#header" }
 @site-title-color: #fff;
 
+// tweak: { "type": "color", "title": "Header Overlay", "target": "#header" }
+@header-overlay-color: rgba(17, 17, 17, 0.1);
+
 #header {
 	height: 100vh;
 	position: relative;
 	text-align: center;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		pointer-events: none;
+		background-color: @header-overlay-color;
+	}
 
 	> figure {
 		margin: 0;
@@ -32,7 +47,7 @@
 		.site-title-font;
 		line-height: 1;
 		color: @site-title-color;
-		z-index: 10;
+		z-index: 20;
 		cursor: default;
 	}
 
@@ -45,7 +60,7 @@
 		height: 48px;
 		padding: 10px;
 		margin: 0 auto 2%;
-		z-index: 10;
+		z-index: 20;
 		background: transparent url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYgNTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2Ljk5OC45N3Y1MS4wODVsLTE1LjUzLTE1LjUzLTEuNDMgMS40MjcgMTcuOTcgMTcuOTcgMTcuOTY4LTE3Ljk3LTEuNDI2LTEuNDI4LTE1LjUzNCAxNS41MzJWLjk3aC0yLjAxOHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=") center center no-repeat;
 		background-size: 18px 28px;
 		.transition-transform(.1s ease);
