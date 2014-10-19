@@ -9,21 +9,13 @@
 		left: 0;
 		right: 50%;
 		bottom: 0;
-		.transform-style(preserve-3d);
 		z-index: 100;
 
 		> a {
 			position: fixed;
-			left: 50%;
-			.transform(translateX(-50%));
+			left: -24px;
 			color: #fff;
-			margin: 4% 0 0;
-
-			@media (max-width: @l-max) {
-				left: -24px;
-				margin-left: 6%;
-				.transform(none);
-			}
+			margin: 4% 0 0 6%;
 		}
 	}
 

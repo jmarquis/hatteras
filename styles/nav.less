@@ -36,23 +36,16 @@
 	right: 0;
 	visibility: hidden;
 	margin: 4% 6% 0;
-	text-align: center;
+	text-align: left;
 	z-index: 50;
-
-	@media (max-width: @l-max) {
-		text-align: left;
-	}
 
 	> a {
 		display: inline-block;
 		visibility: visible;
 		color: @nav-color;
 		position: relative;
+		left: -24px;
 		background-color: fade(#fff, 95%);
-
-		@media (max-width: @l-max) {
-			left: -24px;
-		}
 	}
 }
 
