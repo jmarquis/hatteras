@@ -1,0 +1,7 @@
+<figure id="logo">
+	<a href="/">{website.siteTitle}</a>
+</figure>
+
+<nav id="nav">
+	<squarespace:navigation navigationId="main-nav" template="navigation">
+</nav>

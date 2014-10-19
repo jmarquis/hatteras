@@ -1,40 +1,30 @@
-<nav id="nav">
-	<squarespace:navigation navigationId="main-nav" template="navigation">
-</nav>
-
 <header id="header">
 
 	{.section collection.mainImage}
 		<figure class="content-fill">
 			<img {@|image-meta}>
+			<a href="/">{website.siteTitle}</a>
 		</figure>
 	{.end}
 
-	{.section website}
-		<h1 id="title">{siteTagLine}</h1>
-	{.end}
+	<section class="featured-post">
+		<squarespace:query collection="notebook" limit="1">
+			{.repeated section items}
 
-	<a class="arrow" href="#main"></a>
+				<p class="title">{title}</p>
+
+				{excerpt}
+
+				<a class="button" href="{fullUrl}">View Post</a>
+
+			{.end}
+		</squarespace:query>
+	</section>
 
 </header>
 
 <main>
 	{.repeated section collection.collections}
-
-		{.equal? typeName "blog"}
-			<section class="blog">
-				<div class="content">
-					<h4>The Latest</h4>
-					{.repeated section items}
-						{.equal? @index 1}
-							<h2>{title}</h2>
-							{excerpt}
-							<a href="{fullUrl}" class="button">View Post</a>
-						{.end}
-					{.end}
-				</div>
-			</section>
-		{.end}
 
 		{.equal? typeName "page"}
 			<section>
