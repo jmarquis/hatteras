@@ -8,7 +8,7 @@
 	{.end}
 
 	<section class="featured-post">
-		<squarespace:query collection="notebook" limit="1">
+		<squarespace:query collection="notebook" limit="1" featured="true">
 			{.repeated section items}
 
 				<p class="title">{title}</p>

@@ -33,6 +33,7 @@ body .sqs-block-form .form-wrapper input[type=submit] {
 
 	color: #111;
 	border: 3px solid #111;
+	background-color: transparent;
 
 	.no-touch &:hover {
 		background-color: #111;
@@ -84,50 +85,64 @@ body .sqs-block-form .form-wrapper input[type=submit] {
 }
 
 
-// tweak: { "type": "font", "title": "Form Field Title", "target": ".sqs-block-form" }
-.field-title-font {
-	font-family: "brandon-grotesque", "Brandon Grotesque", "Futura", Helvetica, sans-serif;
+// tweak: { "type": "font", "title": "Form Field Label", "target": ".sqs-block-form" }
+.field-label-font {
+	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 12px;
-	font-weight: 900;
-	letter-spacing: 0em;
+	font-weight: 700;
+	letter-spacing: .125em;
 	text-transform: uppercase;
 }
 
 // tweak: { "type": "font", "title": "Form Field Text", "target": ".sqs-block-form" }
 .field-font {
-	font-family: "pt-mono", Courier, monospace;
-	font-size: 18px;
+	font-family: "freight-text-pro", Georgia, serif;
+	font-style: normal;
+	font-size: 22px;
 	font-weight: 400;
 	letter-spacing: 0em;
 	text-transform: none;
 	line-height: 1.5em;
 }
 
+.placeholder-color(#ccc);
+
 html .sqs-block-form .form-wrapper {
 
 	label.title {
-		.field-title-font;
-		margin-bottom: 2px;
-		color: #999;
+		.field-label-font;
+		margin-bottom: 5px;
+		padding-left: 40px;
 
 		> .required {
 			display: none;
 		}
 	}
 
-	.field-list .field .field-element {
-		background-color: #eee;
-		border-radius: 0;
-		box-shadow: none;
-		margin: 0 !important;
-		.field-font;
-		padding: 6px 12px 10px;
-		border: 0;
-		.transition(none);
+	.field-list .field {
 
-		&:focus {
-			background-color: #fff;
-			box-shadow: inset 0 0 0 3px #111;
+		.field-element {
+			background-color: #f5f5f5;
+			border-radius: 0;
+			box-shadow: none;
+			margin: 0 !important;
+			.field-font;
+			padding: 20px 40px 25px;
+			border: 0;
+			.transition(none);
+			color: #666;
+
+			&:focus {
+				color: #111;
+			}
 		}
+
+		&.textarea .field-element {
+			min-height: 200px;
+		}
+	}
+
+	.form-button-wrapper {
+		padding-left: 40px;
 	}
 }

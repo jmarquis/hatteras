@@ -1,21 +1,5 @@
-{.section item}
-	{@|apply blog-post.block}
-{.end}
-
-{.section pagination}
-	<nav>
-
-		{.section prevItem}
-			<a href="{fullUrl}">Newer</a>
-		{.or}
-			<a class="disabled">Newer</a>
-		{.end}
-
-		{.section nextItem}
-			<a href="{fullUrl}">Older</a>
-		{.or}
-			<a class="disabled">Older</a>
-		{.end}
-
-	</nav>
-{.end}
+<main class="content">
+	{.section item}
+		{@|apply blog-post.block}
+	{.end}
+</main>

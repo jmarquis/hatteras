@@ -1,0 +1,113 @@
+.collection-type-blog > main {
+	padding-top: 20%;
+
+	@media (max-width: @s-max) {
+		padding-top: 30%;
+	}
+
+	> .filter {
+		margin: 0 0 10%;
+
+		> a {
+			display: inline-block;
+			margin-left: 20px;
+		}
+	}
+
+	> article {
+		.clearfix();
+
+		> .title {
+			margin: 0;
+
+			> a {
+				color: @paragraph-color;
+
+				.no-touch &:hover {
+					color: @link-color;
+				}
+			}
+		}
+
+		> .excerpt > p {
+			font-size: @paragraph-font-font-size * .8;
+		}
+
+		> figure {
+			margin: 50px 0;
+		}
+
+		> .sqs-layout {
+			margin-bottom: 50px;
+		}
+
+		> .tag {
+			.small-print;
+			color: @link-color;
+
+			@media (min-width: @m-min) {
+				display: block;
+				float: left;
+			}
+
+			@media (max-width: @s-max) {
+				display: inline-block;
+			}
+
+			.no-touch &:hover {
+				color: @paragraph-color;
+			}
+
+			&::before {
+				content: "#";
+			}
+
+			& + .tag {
+				margin-left: 10px;
+			}
+		}
+
+		> .timestamp {
+			.small-print;
+			color: @link-color;
+
+			@media (min-width: @m-min) {
+				float: right;
+			}
+
+			@media (max-width: @s-max) {
+				display: block;
+				margin: 10px 0;
+			}
+
+			.no-touch &:hover {
+				color: @paragraph-color;
+			}
+		}
+
+		& + article {
+			margin-top: 30%;
+		}
+	}
+
+	> nav {
+		margin: 200px 0 0;
+		text-align: center;
+
+		> a {
+			display: inline-block;
+			margin: 0 20px;
+			.small-print;
+			color: @link-color;
+
+			&.disabled {
+				color: fade(@link-color, 25%) !important;
+				cursor: default;
+			}
+
+			.no-touch &:hover {
+				color: @paragraph-color;
+			}
+		}
+	}
+}

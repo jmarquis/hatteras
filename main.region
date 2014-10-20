@@ -1,0 +1,44 @@
+<aside id="feed">
+
+	<header>
+		Latest Posts
+		<a class="close"></a>
+	</header>
+
+	<squarespace:query collection="notebook" limit="5">
+		<ul>
+			{.repeated section items}
+				<li>
+					<a href="{fullUrl}">
+
+						<figure>
+							<div class="content-fill">
+								<img {@|image-meta}>
+							</div>
+						</figure>
+
+						<div class="title">{title}</div>
+
+					</a>
+				</li>
+			{.end}
+		</ul>
+	</squarespace:query>
+
+	<footer>
+		<a class="button" href="/notebook">View All</a>
+	</footer>
+
+</aside>
+
+<a id="logo" href="/">{website.siteTitle}</a>
+
+<nav id="nav">
+	<squarespace:navigation navigationId="main-nav" template="navigation">
+</nav>
+
+{squarespace.main-content}
+
+<footer id="footer">
+	<p>— fin —</p>
+</footer>

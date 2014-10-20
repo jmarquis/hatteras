@@ -20,7 +20,7 @@
 @nav-color: #111;
 
 
-#logo > a,
+#logo,
 #header > figure > a {
 	@padding: 18px - ((@site-title-font-font-size - @nav-font-font-size) / 2);
 	.site-title-font;
@@ -31,22 +31,11 @@
 
 #logo {
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	visibility: hidden;
-	margin: 4% 6% 0;
-	text-align: left;
-	z-index: 50;
-
-	> a {
-		display: inline-block;
-		visibility: visible;
-		color: @nav-color;
-		position: relative;
-		left: -24px;
-		background-color: fade(#fff, 95%);
-	}
+	left: -24px;
+	margin: 4% 0 0 6%;
+	.site-title-font;
+	color: @nav-color;
+	background-color: fade(#fff, 95%);
 }
 
 #nav {
@@ -54,7 +43,6 @@
 	top: -18px;
 	right: -20px;
 	margin: 4% 6% 0 0;
-	z-index: 30;
 	padding: 10px 20px;
 	background-color: fade(#fff, 95%);
 
@@ -62,6 +50,7 @@
 		list-style: none;
 		margin: 0 -8px 0 0;
 		padding: 0;
+		cursor: default;
 
 		> li {
 			margin: 0;
@@ -76,9 +65,10 @@
 				padding: 8px;
 				margin: 0;
 				display: block;
+				cursor: pointer;
 
 				.no-touch &:hover {
-					opacity: .7;
+					opacity: .5;
 				}
 
 				@media (max-width: @s-max) {

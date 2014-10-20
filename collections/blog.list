@@ -1,35 +1,39 @@
-{.section categoryFilter}
-	<p>Filtering by Category: {@}</p>
-{.end}
+<main class="content">
 
-{.section tagFilter}
-	<p>Filtering by Tag: {@}</p>
-{.end}
+	{.section categoryFilter}
+		<p class="filter">Filtering by Category: {@} <a href="{collection.fullUrl}">clear</a></p>
+	{.end}
 
-{.if authorFilter}
-	<p>Filtering by Author: {author.displayName}</p>
-{.end}
+	{.section tagFilter}
+		<p class="filter">Filtering by Tag: #{@} <a href="{collection.fullUrl}">clear</a></p>
+	{.end}
 
-{.repeated section items}
-	{@|apply blog-post.block}
-{.or}
-	No blog posts yet.
-{.end}
+	{.if authorFilter}
+		<p class="filter">Filtering by Author: {author.displayName} <a href="{collection.fullUrl}">clear</a></p>
+	{.end}
 
-{.section pagination}
-	<nav>
+	{.repeated section items}
+		{@|apply blog-post.block}
+	{.or}
+		No blog posts yet.
+	{.end}
 
-		{.if prevPage}
-			<a href="{prevPageUrl}">Newer</a>
-		{.or}
-			<a class="disabled">Newer</a>
-		{.end}
+	{.section pagination}
+		<nav>
 
-		{.if nextPage}
-			<a href="{nextPageUrl}">Older</a>
-		{.or}
-			<a class="disabled">Older</a>
-		{.end}
+			{.if prevPage}
+				<a href="{prevPageUrl}">← Newer</a>
+			{.or}
+				<a class="disabled">← Newer</a>
+			{.end}
 
-	</nav>
-{.end}
+			{.if nextPage}
+				<a href="{nextPageUrl}">Older →</a>
+			{.or}
+				<a class="disabled">Older →</a>
+			{.end}
+
+		</nav>
+	{.end}
+
+</main>

@@ -1,0 +1,151 @@
+// tweak: { "type": "font", "title": "Feed Item Title", "target": "#feed" }
+.feed-item-title-font {
+	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	letter-spacing: 0em;
+	text-transform: none;
+	line-height: 1.14em;
+}
+
+
+#feed {
+	position: fixed;
+	left: 100%;
+	width: 300px;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+	border-left: 1px solid #ddd;
+	@a: .3s @easing, opacity .3s @easing;
+	.transition-transform(@a);
+
+	.feed-visible > & {
+		opacity: 1;
+		.transform(translate3d(-300px,0,0));
+	}
+
+	> header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 4vw 50px 2vw;
+		background-color: fade(#fff, 95%);
+		.nav-font;
+		line-height: 1;
+		cursor: default;
+		z-index: 5;
+
+		> a {
+			position: absolute;
+			top: 4vw;
+			right: 50px;
+			width: 40px;
+			height: 40px;
+			margin: -14px -10px 0 0;
+			opacity: .5;
+			display: block;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&::before, &::after {
+				content: "";
+				position: absolute;
+				top: 19px;
+				height: 2px;
+				left: 10px;
+				right: 10px;
+				background-color: #111;
+			}
+
+			&::before {
+				.transform(rotate(45deg));
+			}
+
+			&::after {
+				.transform(rotate(-45deg));
+			}
+		}
+	}
+
+	> ul {
+		list-style: none;
+		margin: 0;
+		padding: 4vw 50px 0;
+		height: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+
+		> li {
+			margin: 0 0 40px;
+			padding: 0;
+
+			&:first-child {
+				margin-top: 80px;
+			}
+
+			&:last-child {
+				margin-bottom: 150px;
+			}
+
+			> a {
+				display: block;
+				color: @paragraph-color;
+
+				&:hover {
+					opacity: .8;
+				}
+
+				> figure {
+					margin: 0 0 8px;
+					position: relative;
+					padding-bottom: 100%;
+
+					> .content-fill {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+					}
+				}
+
+				> .title {
+					.feed-item-title-font;
+				}
+			}
+		}
+	}
+
+	> footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 2vw 50px;
+		background-color: fade(#fff, 95%);
+		z-index: 5;
+
+		> a {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+#logo,
+#nav,
+#header,
+main,
+#footer {
+	@a: .3s @easing;
+	.transition-transform(@a);
+
+	.feed-visible & {
+		.transform(translate3d(-300px,0,0));
+	}
+}

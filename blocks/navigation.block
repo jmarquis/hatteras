@@ -6,7 +6,7 @@
 			{.repeated section items}
 
 				{.collection?}
-					<li class="{.section active} active-link{.end}">
+					<li class="{.section active}active-link{.end}">
 						<a href="{collection.fullUrl}">{collection.navigationTitle}</a>
 					</li>
 				{.end}
