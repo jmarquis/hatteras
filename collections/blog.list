@@ -12,11 +12,28 @@
 		<p class="filter">Filtering by Author: {author.displayName} <a href="{collection.fullUrl}">clear</a></p>
 	{.end}
 
-	{.repeated section items}
-		{@|apply blog-post.block}
-	{.or}
-		No blog posts yet.
-	{.end}
+	<ul class="list">
+		{.repeated section items}
+			<li>
+				<a href="{fullUrl}">
+
+					<figure>
+						<div class="content-fill">
+							<img {@|image-meta}>
+						</div>
+					</figure>
+
+					<div class="meta">
+						<div class="title">{title}</div>
+						<time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
+					</div>
+
+				</a>
+			</li>
+		{.or}
+			No blog posts yet.
+		{.end}
+	</ul>
 
 	{.section pagination}
 		<nav>

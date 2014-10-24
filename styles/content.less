@@ -114,6 +114,10 @@ html .sqs-block-form .form-wrapper {
 		margin-bottom: 5px;
 		padding-left: 40px;
 
+		@media (max-width: @s-max) {
+			padding-left: 24px;
+		}
+
 		> .required {
 			display: none;
 		}
@@ -132,6 +136,10 @@ html .sqs-block-form .form-wrapper {
 			.transition(none);
 			color: #666;
 
+			@media (max-width: @s-max) {
+				padding: 16px 24px 18px;
+			}
+
 			&:focus {
 				color: #111;
 			}
@@ -144,5 +152,10 @@ html .sqs-block-form .form-wrapper {
 
 	.form-button-wrapper {
 		padding-left: 40px;
+
+		@media (max-width: @s-max) {
+			padding: 0;
+			text-align: center;
+		}
 	}
 }

@@ -1,3 +1,7 @@
+body::before {
+	z-index: 18;
+}
+
 #feed {
 	z-index: 10;
 }
@@ -14,6 +18,10 @@
 
 	> figure {
 		z-index: 30;
+
+		@media (max-width: @s-max) {
+			z-index: 15;
+		}
 	}
 
 	> .featured-post {

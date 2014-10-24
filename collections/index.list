@@ -11,7 +11,7 @@
 		<squarespace:query collection="notebook" limit="1" featured="true">
 			{.repeated section items}
 
-				<p class="title">{title}</p>
+				<h1>{title}</h1>
 
 				{excerpt}
 
@@ -27,7 +27,8 @@
 	{.repeated section collection.collections}
 
 		{.equal? typeName "page"}
-			<section>
+			<section data-page="{urlId}">
+				<a name="{urlId}"></a>
 				<div class="content">
 					{mainContent}
 				</div>

@@ -1,4 +1,5 @@
 Y.use("node", function (Y) {
+
 	Y.on("domready", function () {
 
 		// initialize all images
@@ -14,4 +15,28 @@ Y.use("node", function (Y) {
 		});
 
 	});
+
+	var nav = Y.one("#nav");
+
+	nav.delegate("click", function (e) {
+		var urlId = this.getAttribute("href").substring(2);
+		var section = Y.one("main > section[data-page='" + urlId + "']");
+		if (section) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			var animation = new Y.Anim({
+				duration: 0.5,
+				node: "win",
+				easing: "easeBoth",
+				to: {
+					scroll: [0, section.get("region").top - 80]
+				}
+			});
+
+			animation.run();
+
+		}
+	}, "a[href^='/#']");
+
 });

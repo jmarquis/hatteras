@@ -2,6 +2,10 @@
 	height: 100vh;
 	position: relative;
 
+	@media (max-width: @s-max) {
+		height: auto;
+	}
+
 	> figure {
 		margin: 0;
 		position: absolute;
@@ -10,11 +14,21 @@
 		right: 50%;
 		bottom: 0;
 
+		@media (max-width: @s-max) {
+			position: relative;
+			right: 0;
+			height: 50vh;
+		}
+
 		> a {
 			position: fixed;
 			left: -24px;
 			color: #fff;
 			margin: 4% 0 0 6%;
+
+			@media (max-width: @s-max) {
+				display: none;
+			}
 		}
 	}
 
@@ -25,8 +39,15 @@
 		bottom: 0;
 		padding: 0 10% 6% 4%;
 
-		> .title {
-			.h1-font;
+		@media (max-width: @s-max) {
+			position: relative;
+			left: 0;
+			padding: 15% 20px 15%;
+			text-align: center;
+			border-bottom: 1px solid #ddd;
+		}
+
+		> h1 {
 			margin: 0;
 		}
 
