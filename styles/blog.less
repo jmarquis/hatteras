@@ -29,8 +29,12 @@
 			}
 		}
 
-		> .excerpt > p {
-			font-size: @paragraph-font-font-size * .8;
+		> .excerpt {
+			margin-bottom: 50px;
+
+			> p {
+				font-size: @paragraph-font-font-size * .8;
+			}
 		}
 
 		> figure {
@@ -107,7 +111,7 @@
 			@media (min-width: @m-min) {
 				float: left;
 				width: 50%;
-				padding: 0 20px 20px;
+				padding: 20px;
 			}
 
 			> a {

@@ -1,5 +1,34 @@
 <main class="content">
 	{.section item}
-		{@|apply blog-post.block}
+		<article class="{@|item-classes}">
+
+			<h1 class="title">
+				{.passthrough?}
+					<a href="{sourceUrl}" target="_blank">{title}</a>
+				{.or}
+					<a href="{fullUrl}">{title}</a>
+				{.end}
+			</h1>
+
+			<div class="excerpt">
+				{excerpt}
+			</div>
+
+			{body}
+
+			{postItemInjectCode}
+
+			{.repeated section categories}
+				<!--<a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},-->
+			{.end}
+
+			{.repeated section tags}
+				<a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>
+			{.end}
+
+			<a class="timestamp" href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a>
+
+		</article>
+
 	{.end}
 </main>
