@@ -1,15 +1,24 @@
-.collection-type-index > main {
+.collection-type-index {
 
-	> section {
-		margin: 10% 0;
+	#header {
+		height: 100vh;
 
-		@media (max-width: @s-max) {
-			margin: 20% 0;
+		> .page-title {
+			display: none;
 		}
 
-		> a {
-			position: relative;
-			top: -80px;
+		> .page-description {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: 0 0 4% 6%;
+			max-width: 70%;
+			text-align: left;
+
+			> p {
+				margin: 0;
+				.page-title-font;
+			}
 		}
 	}
 }

@@ -1,53 +1,65 @@
 // tweak: { "type": "font", "title": "H1 Font", "target": "h1" }
 .h1-font {
-	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 54px;
-	font-weight: 400;
+	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 48px;
+	font-weight: 300;
 	letter-spacing: 0em;
 	text-transform: none;
-	line-height: 1.11em;
+	line-height: 1.33em;
 }
+
+// tweak: { "type": "color", "title": "Heading 1", "target": "h1" }
+@h1-color: #333;
 
 h1 {
 	.h1-font;
+	color: @h1-color;
 
-	@media (max-width: @s-max) {
-		font-size: @h1-font-font-size * .75;
+	@media (max-width: @breakpoint) {
+		// font-size: @h1-font-font-size * .75;
 	}
 }
 
 
 // tweak: { "type": "font", "title": "H2 Font", "target": "h2" }
 .h2-font {
-	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 40px;
-	font-weight: 400;
+	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: 300;
 	letter-spacing: 0em;
-	text-transform: uppercase;
-	line-height: 1em;
+	text-transform: none;
+	line-height: 1.33em;
 }
+
+// tweak: { "type": "color", "title": "Heading 2", "target": "h2" }
+@h2-color: #333;
 
 h2 {
 	.h2-font;
+	color: @h2-color;
 
-	@media (max-width: @s-max) {
-		font-size: @h2-font-font-size * .75;
+	@media (max-width: @breakpoint) {
+		// font-size: @h2-font-font-size * .75;
 	}
 }
 
 
 // tweak: { "type": "font", "title": "H3 Font", "target": "h3" }
 .h3-font {
-	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 15px;
+	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: 0em;
 	text-transform: uppercase;
-	line-height: 1em;
+	line-height: 1.33em;
 }
+
+// tweak: { "type": "color", "title": "Heading 3", "target": "h3" }
+@h3-color: #333;
 
 h3 {
 	.h3-font;
+	color: @h3-color;
 }
 
 
@@ -61,6 +73,10 @@ h1, h2, h3 {
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	& + & {
+		margin-top: 0;
+	}
 }
 
 h3 {
@@ -70,28 +86,27 @@ h3 {
 
 // tweak: { "type": "font", "title": "Paragraph Font", "target": "p" }
 .paragraph-font {
-	font-family: "freight-text-pro", Georgia, serif;
+	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
 	font-style: normal;
-	font-size: 22px;
-	font-weight: 400;
-	letter-spacing: 0em;
-	text-transform: none;
+	font-size: 18px;
+	font-weight: 300;
 	line-height: 1.5em;
 }
 
 // tweak: { "type": "font", "title": "Italic Font", "target": "p em" }
 .italic-font {
-	font-family: "freight-text-pro", Georgia, serif;
+	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
 	font-style: italic;
-	font-size: 22px;
-	font-weight: 400;
-	letter-spacing: 0em;
-	text-transform: none;
+	font-size: 18px;
+	font-weight: 300;
 	line-height: 1.5em;
 }
 
-// tweak: { "type": "color", "title": "Paragraph Color", "target": "p" }
-@paragraph-color: #111;
+// tweak: { "type": "color", "title": "Paragraph", "target": "p" }
+@paragraph-color: rgba(51, 51, 51, .7);
+
+// tweak: { "type": "color", "title": "Italic Text", "target": "p" }
+@italic-color: rgba(51, 51, 51, .7);
 
 
 body {
@@ -101,33 +116,23 @@ body {
 p {
 	.paragraph-font;
 	margin: 1em 0;
+	color: @paragraph-color;
 
 	em {
 		.italic-font;
+		color: @italic-color;
 	}
 }
 
 
-// tweak: { "type": "font", "title": "Small Print" }
-.small-print {
-	font-family: "futura-pt", "Futura PT", "Futura", "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	letter-spacing: 0em;
-	text-transform: uppercase;
-	line-height: 1em;
-}
-
-
-// tweak: { "type": "color", "title": "Link Color", "target": ".sqs-layout a" }
-@link-color: #777;
+// tweak: { "type": "color", "title": "Link", "target": ".sqs-layout a" }
+@link-color: #333;
 
 a {
 	text-decoration: none;
 
 	p & {
 		color: @link-color;
-		text-decoration: underline;
 
 		.no-touch &:hover {
 			color: @paragraph-color;
@@ -137,11 +142,11 @@ a {
 
 
 ::selection {
-	background: #111;
+	background: #333;
 	color: #fff;
 }
 
 ::-moz-selection {
-	background: #111;
+	background: #333;
 	color: #fff;
 }

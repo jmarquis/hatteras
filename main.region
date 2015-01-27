@@ -1,44 +1,30 @@
-<aside id="feed">
+<div id="canvas">
 
-	<header>
-		Latest Posts
-		<a class="close"></a>
+	<a id="logo" href="/">{website.siteTitle}</a>
+
+	<nav id="nav">
+		<squarespace:navigation navigationId="main-nav" template="navigation">
+	</nav>
+
+	<header id="header">
+
+		{.section collection.mainImage}
+			<figure class="content-fill">
+				<img {@|image-meta}>
+			</figure>
+		{.end}
+
+		<div class="page-title">{collection.title}</div>
+		<div class="page-description">{collection.description}</div>
+
 	</header>
 
-	<squarespace:query collection="notebook" limit="5">
-		<ul>
-			{.repeated section items}
-				<li>
-					<a href="{fullUrl}">
+	<main>
+		{squarespace.main-content}
+	</main>
 
-						<figure>
-							<div class="content-fill">
-								<img {@|image-meta}>
-							</div>
-						</figure>
-
-						<div class="title">{title}</div>
-
-					</a>
-				</li>
-			{.end}
-		</ul>
-	</squarespace:query>
-
-	<footer>
-		<a class="button" href="/notebook">View All</a>
+	<footer id="footer">
+		<squarespace:block-field id="footer" columns="12">
 	</footer>
 
-</aside>
-
-<a id="logo" href="/">{website.siteTitle}</a>
-
-<nav id="nav">
-	<squarespace:navigation navigationId="main-nav" template="navigation">
-</nav>
-
-{squarespace.main-content}
-
-<footer id="footer">
-	<p>— fin —</p>
-</footer>
+</div>

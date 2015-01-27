@@ -1,39 +1,12 @@
-<header id="header">
+{.repeated section collection.collections}
 
-	{.section collection.mainImage}
-		<figure class="content-fill">
-			<img {@|image-meta}>
-			<a href="/">{website.siteTitle}</a>
-		</figure>
+	{.equal? typeName "page"}
+		<section data-page="{urlId}">
+			<a name="{urlId}"></a>
+			<div class="content">
+				{mainContent}
+			</div>
+		</section>
 	{.end}
 
-	<section class="featured-post">
-		<squarespace:query collection="notebook" limit="1" featured="true">
-			{.repeated section items}
-
-				<h1>{title}</h1>
-
-				{excerpt}
-
-				<a class="button" href="{fullUrl}">View Post</a>
-
-			{.end}
-		</squarespace:query>
-	</section>
-
-</header>
-
-<main>
-	{.repeated section collection.collections}
-
-		{.equal? typeName "page"}
-			<section data-page="{urlId}">
-				<a name="{urlId}"></a>
-				<div class="content">
-					{mainContent}
-				</div>
-			</section>
-		{.end}
-
-	{.end}
-</main>
+{.end}
