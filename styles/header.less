@@ -24,6 +24,10 @@
 	position: relative;
 	z-index: 50;
 
+	@media (max-width: @breakpoint) {
+		padding-top: 30%;
+	}
+
 	> figure {
 		margin: 0;
 		position: absolute;
@@ -41,6 +45,10 @@
 		text-align: center;
 		z-index: 100;
 		.page-title-font;
+
+		@media (max-width: @breakpoint) {
+			padding: 0 10%;
+		}
 	}
 
 	> .page-description {
@@ -49,6 +57,13 @@
 		max-width: 400px;
 		text-align: center;
 		z-index: 100;
-		.page-description-font;
+
+		> p {
+			.page-description-font;
+		}
+
+		@media (max-width: @breakpoint) {
+			padding: 0 10%;
+		}
 	}
 }

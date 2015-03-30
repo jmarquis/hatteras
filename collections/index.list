@@ -1,9 +1,37 @@
 {.repeated section collection.collections}
 
-	{.equal? typeName "page"}
-		<section data-page="{urlId}">
+	{.equal? typeName "blog"}
+		<section data-page="{urlId}" data-url="{fullUrl}" data-type="blog">
 			<a name="{urlId}"></a>
-			<div class="content">
+			<header>
+				<div class="title">{title}</div>
+				<div class="description">{description}</div>
+				<a class="button" href="{fullUrl}">See all →</a>
+			</header>
+			<div>
+				<ul>
+					{.section items.0}
+						{@|apply index-blog-post.block}
+					{.end}
+					{.section items.1}
+						{@|apply index-blog-post.block}
+					{.end}
+					{.section items.2}
+						{@|apply index-blog-post.block}
+					{.end}
+				</ul>
+			</div>
+		</section>
+	{.end}
+
+	{.equal? typeName "page"}
+		<section data-page="{urlId}" data-url="{fullUrl}" data-type="page">
+			<a name="{urlId}"></a>
+			<header>
+				<div class="title">{title}</div>
+				<div class="description">{description}</div>
+			</header>
+			<div>
 				{mainContent}
 			</div>
 		</section>

@@ -25,11 +25,12 @@
 
 #logo {
 	position: absolute;
-	top: -8px;
+	top: -7px;
 	left: -8px;
 	margin: 4% 0 0 6%;
 	padding: 8px;
 	.site-title-font;
+	line-height: 1;
 	color: @site-title-color;
 	z-index: 100;
 }
@@ -40,6 +41,10 @@
 	right: 0;
 	margin: 4% 6% 0 0;
 	z-index: 100;
+
+	@media (max-width: @breakpoint) {
+		display: none;
+	}
 
 	> ul {
 		list-style: none;

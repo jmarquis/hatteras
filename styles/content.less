@@ -1,0 +1,72 @@
+// tweak: { "type": "color", "title": "Buttons", "target": ".sqs-block-button, a.button", "category": "Buttons" }
+@button-color: rgba(51, 51, 51, 0.7);
+
+// tweak: { "type": "font", "title": "Button Font", "target": ".sqs-block-button, a.button", "category": "Buttons" }
+.button-font {
+	font-family: "lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.167em;
+}
+
+.button {
+	color: @button-color;
+	display: inline-block;
+	.button-font;
+	height: 50px;
+	line-height: 46px;
+	border: 2px solid @button-color;
+	border-radius: 50px;
+	padding: 0 25px;
+	background-color: transparent;
+
+	.no-touch &:hover, .touch & {
+		background-color: @button-color;
+		color: #fff;
+		border-color: transparent;
+	}
+}
+
+.sqs-block-form {
+
+	.form-wrapper .field-list .field {
+		margin-bottom: 10px;
+
+		> label {
+			display: none;
+		}
+
+		> input,
+		> textarea {
+			background-color: transparent;
+			.paragraph-font;
+			border: 2px solid fade(#333, 10%);
+			border-radius: 5px;
+			margin: 0;
+			padding: 0 30px;
+			font-size: 24px;
+			font-weight: 300;
+			color: @paragraph-color;
+
+			&:focus {
+				border-color: fade(#333, 70%);
+			}
+		}
+
+		> input {
+			height: 80px;
+			padding-bottom: 4px;
+		}
+
+		> textarea {
+			height: 200px;
+			padding-top: 23px;
+		}
+	}
+
+	.form-button-wrapper > input {
+		.button;
+	}
+}

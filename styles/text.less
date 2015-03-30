@@ -9,7 +9,7 @@
 }
 
 // tweak: { "type": "color", "title": "Heading 1", "target": "h1" }
-@h1-color: #333;
+@h1-color: rgba(51, 51, 51, .7);
 
 h1 {
 	.h1-font;
@@ -47,15 +47,15 @@ h2 {
 // tweak: { "type": "font", "title": "H3 Font", "target": "h3" }
 .h3-font {
 	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: 700;
+	font-size: 24px;
+	font-weight: 300;
 	letter-spacing: 0em;
-	text-transform: uppercase;
+	text-transform: none;
 	line-height: 1.33em;
 }
 
 // tweak: { "type": "color", "title": "Heading 3", "target": "h3" }
-@h3-color: #333;
+@h3-color: rgba(51, 51, 51, .7);
 
 h3 {
 	.h3-font;
@@ -88,8 +88,8 @@ h3 {
 .paragraph-font {
 	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
 	font-style: normal;
-	font-size: 18px;
 	font-weight: 300;
+	font-size: 18px;
 	line-height: 1.5em;
 }
 
@@ -97,9 +97,8 @@ h3 {
 .italic-font {
 	font-family: "lato", "Lato", "Helvetica Neue", Helvetica, sans-serif;
 	font-style: italic;
-	font-size: 18px;
 	font-weight: 300;
-	line-height: 1.5em;
+	text-decoration: none;
 }
 
 // tweak: { "type": "color", "title": "Paragraph", "target": "p" }
@@ -111,6 +110,7 @@ h3 {
 
 body {
 	color: @paragraph-color;
+	.paragraph-font;
 }
 
 p {

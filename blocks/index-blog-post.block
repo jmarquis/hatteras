@@ -1,0 +1,18 @@
+<li>
+	<a href="{fullUrl}">
+		<figure>
+			<div class="content-fill">
+				<img {@|image-meta}>
+			</div>
+		</figure>
+		<div class="title">{title}</div>
+		<div class="excerpt">
+			{excerpt}
+		</div>
+		<div class="category">
+			{.section categories.0}
+				{@}
+			{.end}
+		</div>
+	</a>
+</li>

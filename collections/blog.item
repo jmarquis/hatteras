@@ -1,34 +1,35 @@
-<main class="content">
-	{.section item}
-		<article class="{@|item-classes}">
+{.section item}
+	<article class="{@|item-classes}">
 
-			<h1 class="title">
-				{.passthrough?}
-					<a href="{sourceUrl}" target="_blank">{title}</a>
-				{.or}
-					<a href="{fullUrl}">{title}</a>
-				{.end}
-			</h1>
+		{body}
 
-			<div class="excerpt">
-				{excerpt}
-			</div>
+		{postItemInjectCode}
 
-			{body}
-
-			{postItemInjectCode}
-
+		<div class="categories">
 			{.repeated section categories}
-				<!--<a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},-->
+				<a href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
 			{.end}
+		</div>
 
-			{.repeated section tags}
-				<a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>
-			{.end}
+		<a class="timestamp" href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a>
 
-			<a class="timestamp" href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a>
+	</article>
+{.end}
 
-		</article>
+{.section pagination}
+	<nav>
 
-	{.end}
-</main>
+		{.section prevItem}
+			<a href="{fullUrl}">←<span> {title}</span></a>
+		{.or}
+			<a class="disabled">←<span> Newer</span></a>
+		{.end}
+
+		{.section nextItem}
+			<a href="{fullUrl}"><span>{title} </span>→</a>
+		{.or}
+			<a class="disabled"><span>Older </span>→</a>
+		{.end}
+
+	</nav>
+{.end}

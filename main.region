@@ -14,17 +14,23 @@
 			</figure>
 		{.end}
 
-		<div class="page-title">{collection.title}</div>
-		<div class="page-description">{collection.description}</div>
+		<div class="page-title">
+			{.section item}{title}{.or}{collection.title}{.end}
+		</div>
+		<div class="page-description">
+			{.section item}{excerpt}{.or}{collection.description}{.end}
+		</div>
 
 	</header>
 
-	<main>
+	<main class="content">
 		{squarespace.main-content}
 	</main>
 
 	<footer id="footer">
-		<squarespace:block-field id="footer" columns="12">
+		<div class="content">
+			<squarespace:block-field id="footer" columns="12">
+		</div>
 	</footer>
 
 </div>

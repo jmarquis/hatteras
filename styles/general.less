@@ -19,14 +19,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-// tweak: { "type": "value", "title": "Content Width", "category": "Site Options", "min": 600, "max": 1200, "step": 10 }
-@content-width: 620px;
-
 .content {
 	width: 100%;
-	max-width: ~"calc(@{content-width} + 10%)";
+	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0 5%;
+	padding: 0 6%;
 
 	.yui3-widget & {
 		margin: 0;
@@ -34,9 +31,9 @@ body {
 		width: auto;
 	}
 
-	// @media (max-width: @s-max) {
-	// 	padding-left: 6%;
-	// 	padding-right: 6%;
-	// }
+	.view-item & {
+		max-width: 800px;
+	}
 }
 
+.placeholder-color(fade(#333, 20%));
