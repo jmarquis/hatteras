@@ -2,3 +2,4 @@
 *.sublime-workspace
 /node_modules/
 sftp-config.json
+sftp.json
